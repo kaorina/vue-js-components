@@ -1,0 +1,40 @@
+<div id="registrations" class="container">
+  <h3>登録フォーム(コンポーネント利用なしver.)</h3>
+  <div class="form-group">
+    <label>氏名</label>
+    <div class="form-inline">
+      <input v-model="user.familyName" type="text" class="form-control" placeholder="田中">
+      <input v-model="user.firstName" type="text" class="form-control" placeholder="太郎">
+      <span class="text-danger" v-show="!validation.name">入力してください</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>フリガナ</label>
+    <div class="form-inline">
+      <input v-model="user.familyNameKana" type="text" class="form-control" placeholder="タナカ">
+      <input v-model="user.firstNameKana" type="text" class="form-control" placeholder="タロウ">
+      <span class="text-danger" v-show="!validation.furigana">正しい形式で入力してください</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>郵便番号</label>
+    <div class="form-inline">
+      <input v-model="address.zipCode3digit" type="text" class="form-control" placeholder="111">
+      -
+      <input v-model="address.zipCode4digit" type="text" class="form-control" placeholder="2222">
+      <span class="text-danger"　v-show="!validation.zipCode">入力してください</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>住所</label>
+    <input v-model="address.prefecture" type="text" class="form-control" placeholder="東京都">
+    <input v-model="address.city" type="text" class="form-control" placeholder="中央区新川1-2-3">
+    <span>マンション・ビル名</span>
+    <input v-model="address.buildingName" type="text" class="form-control" placeholder="Xビル５F">
+    <span class="text-danger" v-show="!validation.address">全ての住所欄を入力してください</span>
+  </div>
+  <button type="button" :disabled="!isValid" class="btn btn-info">Submit</button>
+</div>

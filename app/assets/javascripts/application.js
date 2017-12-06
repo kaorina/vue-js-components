@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require vue
-//= require registrations
+//= require registrations/form
+//= require registrations/formApp
