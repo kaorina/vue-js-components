@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: vue-js-components_development
+
+test:
+  <<: *default
+  database: vue-js-components_test
+
+production:
+  <<: *default
+  database: vue-js-components_production
+  username: vue-js-components
+  password: <%= ENV['VUE-JS-COMPONENTS_DATABASE_PASSWORD'] %>
