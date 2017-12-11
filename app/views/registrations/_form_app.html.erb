@@ -1,0 +1,36 @@
+<div id="registrations-app" class="container">
+  <h3>コンポーネント利用ver.</h3>
+  <div class="form-group">
+    <label>氏名</label>
+    <div class="form-inline">
+      <form-app-input-text :column="'familyName'" :user="user" :placeholder="'田中'" @update-status-from-child="updateStatus"></form-app-input-text>
+      <form-app-input-text :column="'firstName'" :user="user" :placeholder="'太郎'" @update-status-from-child="updateStatus"></form-app-input-text>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>フリガナ</label>
+    <div class="form-inline">
+      <form-app-input-text :column="'familyNameKana'" :user="user" :placeholder="'タナカ'" @update-status-from-child="updateStatus"></form-app-input-text>
+      <form-app-input-text :column="'firstNameKana'" :user="user" :placeholder="'タロウ'" @update-status-from-child="updateStatus"></form-app-input-text>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>郵便番号</label>
+    <div class="form-inline">
+      <input-zip-code :column="'zipCode3digit'" :user="user" :placeholder="'111'" @update-status-from-child="updateStatus"></input-zip-code>
+      -
+      <input-zip-code :column="'zipCode4digit'" :user="user" :placeholder="'2222'" @update-status-from-child="updateStatus"></input-zip-code>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>住所</label>
+    <form-app-input-text :column="'prefecture'" :user="user" :placeholder="'東京都'" @update-status-from-child="updateStatus"></form-app-input-text>
+    <form-app-input-text :column="'city'" :user="user" :placeholder="'中央区新川1-2-3'" @update-status-from-child="updateStatus"></form-app-input-text>
+    <span>マンション・ビル名</span>
+    <form-app-input-text :column="'buildingName'" :user="user" :placeholder="'Xビル５F'" @update-status-from-child="updateStatus"></form-app-input-text>
+  </div>
+  <button type="button" class="btn btn-info" :disabled="!status">Submit</button>
+</div>
