@@ -4,7 +4,7 @@ Vue.jsのコンポーネント説明用に登録フォームアプリを、コ�
 ベースの実装はRuby on RailsでControllerとindex用のviewのみを作成。
 その後Vue.jsで実装しています。
 
-説明記事はこちら（本番公開後update）
+説明記事は[こちら](https://qiita.com/kaorina/items/86892081b5e119a11e9d)
 
 ## 開発環境について
 以下環境にて動作確認済みです。
